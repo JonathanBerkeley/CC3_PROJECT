@@ -134,10 +134,9 @@ GameObject:
   - component: {fileID: 552765784}
   - component: {fileID: 552765783}
   - component: {fileID: 552765782}
-  - component: {fileID: 552765785}
   - component: {fileID: 552765781}
-  - component: {fileID: 552765786}
   - component: {fileID: 552765787}
+  - component: {fileID: 552765785}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -234,30 +233,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552765780}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86118dcb2020e01428d50b5d615b988a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraSpeed: 2
-  moveSpeed: 2
---- !u!114 &552765786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552765780}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1316580a90f798647b828157d95e840c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Axis: 1
-  MinimumVertical: -45
-  MaximumVertical: 45
-  HorizonitalSensitivity: 4
-  VerticalSensitivity: 4
+  minimumVerticalLook: -90
+  maximumVerticalLook: 90
+  horizonitalSensitivity: 2
+  verticalSensitivity: 2
 --- !u!114 &552765787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,8 +255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4d86273b67c6c4fb2c100e1814c6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 6
-  DownForce: -9.8
+  speed: 5
+  speedShiftMultiplier: 500
+  downForce: -10
 --- !u!1 &926814805
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,10 +355,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Axis: 2
-  MinimumVertical: -45
-  MaximumVertical: 45
-  HorizonitalSensitivity: 3
-  VerticalSensitivity: 3
+  minimumVerticalLook: -90
+  maximumVerticalLook: 90
+  horizonitalSensitivity: 2
+  verticalSensitivity: 2
 --- !u!1 &1298881817
 GameObject:
   m_ObjectHideFlags: 0

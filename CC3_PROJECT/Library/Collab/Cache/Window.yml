@@ -14,19 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Prefabs.meta
-    - Assets/Prefabs/Cube.prefab
-    - Assets/Prefabs/Cube.prefab.meta
-    - Assets/Resources.meta
-    - Assets/Resources/speedPyshco2.png
-    - Assets/Resources/speedPyshco2.png.meta
-    - Assets/Scenes/TestingScene.unity
     - Assets/Scripts/Player_Look.cs
-    - Assets/Scripts/Player_Look.cs.meta
     - Assets/Scripts/Player_Move.cs
-    - Assets/Scripts/Player_Move.cs.meta
+    - Packages/manifest.json
+    - Packages/packages-lock.json
     - 
-    m_Values: 000000000000000000000000
+    m_Values: 0101010101
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
