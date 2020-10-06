@@ -17,20 +17,28 @@ public class Player_Look : MonoBehaviour
 
     public float horizonitalSensitivity = 2.0f;
     public float verticalSensitivity = 2.0f;
-    
+
+    public bool lockCursor = true;
+    public bool forceHideCursor = true;
+
     private float _rotationX = 0.0f;
 
     void Update()
     {
+        if (lockCursor)
+            Cursor.lockState = CursorLockMode.Locked;
+        else
+            Cursor.lockState = CursorLockMode.Confined;
+        if (forceHideCursor)
+            Cursor.visible = false;
+
         //For X
-        if(Axis == RotationAxis.MouseX)
-        {
-            transform.Rotate(0, Input.GetAxis("Mouse X") * horizonitalSensitivity, 0);
-        } 
+        if (Axis == RotationAxis.MouseX)
+            transform.Rotate(0, Input.GetAxisRaw("Mouse X") * horizonitalSensitivity, 0);
         //For Y
         else if (Axis == RotationAxis.MouseY)
         {
-            _rotationX -= Input.GetAxis("Mouse Y") * verticalSensitivity;
+            _rotationX -= Input.GetAxisRaw("Mouse Y") * verticalSensitivity;
             _rotationX = Mathf.Clamp(_rotationX, minimumVerticalLook, maximumVerticalLook);
 
             float rotationY = transform.localEulerAngles.y;

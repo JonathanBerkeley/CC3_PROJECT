@@ -243,6 +243,8 @@ MonoBehaviour:
   maximumVerticalLook: 90
   horizonitalSensitivity: 2
   verticalSensitivity: 2
+  lockCursor: 1
+  forceHideCursor: 0
 --- !u!114 &552765787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +260,7 @@ MonoBehaviour:
   speed: 5
   speedShiftMultiplier: 500
   downForce: -10
+  accelerateDownForce: 0
 --- !u!1 &926814805
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +362,8 @@ MonoBehaviour:
   maximumVerticalLook: 90
   horizonitalSensitivity: 2
   verticalSensitivity: 2
+  lockCursor: 1
+  forceHideCursor: 1
 --- !u!1 &1298881817
 GameObject:
   m_ObjectHideFlags: 0

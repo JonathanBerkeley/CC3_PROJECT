@@ -5,8 +5,11 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
     public float speed = 5.0f;
-    public float speedShiftMultiplier = 20.0f;
+    public float speedShiftMultiplier = 500.0f;
     public float downForce = -10.0f;
+    public bool accelerateDownForce = false;
+
+    private float velocityY = 0.0f;
 
     private CharacterController _playerController;
 
@@ -17,14 +20,16 @@ public class Player_Move : MonoBehaviour
 
     void Update()
     {
-        
-        float deltaX = Input.GetAxis("Horizontal") * (speed * (Input.GetButtonDown("Shift") ? speedShiftMultiplier : 1));
-        float deltaZ = Input.GetAxis("Vertical") * (speed * (Input.GetButtonDown("Shift") ? speedShiftMultiplier : 1));
+        float deltaX = Input.GetAxisRaw("Horizontal") * (speed * (Input.GetButtonDown("Shift") ? speedShiftMultiplier : 1));
+        float deltaZ = Input.GetAxisRaw("Vertical") * (speed * (Input.GetButtonDown("Shift") ? speedShiftMultiplier : 1));
         Vector3 pMove = new Vector3(deltaX, 0.0f, deltaZ);
-        pMove = Vector3.ClampMagnitude(pMove, speed * speedShiftMultiplier);
-        pMove.y = downForce; //Gravity
+
+        if (accelerateDownForce && !_playerController.isGrounded)
+            velocityY += downForce * Time.deltaTime;
+        pMove.y = downForce + velocityY; //Gravity
         pMove *= Time.deltaTime;
         pMove = transform.TransformDirection(pMove);
+
         _playerController.Move(pMove);
     }
 }
