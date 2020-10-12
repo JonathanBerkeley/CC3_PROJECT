@@ -17,9 +17,9 @@ MonoBehaviour:
     - Assets/Scenes/TestingScene.unity
     - Assets/Scripts/Player_Move.cs
     - 
-    m_Values: 010000
+    m_Values: 010101
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0
-  TabIndex: 1
+  TabIndex: 0
