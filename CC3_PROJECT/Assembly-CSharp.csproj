@@ -56,14 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Moving_Platform.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\GrappleMain.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
-    <Compile Include="Assets\Scripts\Player_Move.cs" />
-    <Compile Include="Assets\Scripts\CharacterController.cs" />
-    <Compile Include="Assets\Scripts\Player_Look.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerMove.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerLook.cs" />
     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\FPMovement.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\FPMovement.cs" />
     <Compile Include="Assets\Scripts\platformAttach.cs" />
-    <Compile Include="Assets\Scripts\GrappleMain.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\RigidMove.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

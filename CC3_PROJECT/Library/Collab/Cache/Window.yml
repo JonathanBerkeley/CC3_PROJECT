@@ -15,11 +15,10 @@ MonoBehaviour:
   SimpleSelectedItems:
     m_Keys:
     - Assets/Scenes/TestingScene.unity
-    - Assets/Scripts/GrappleMain.cs
-    - Assets/Scripts/GrappleMain.cs.meta
+    - Assets/Scripts/PlayerScripts/RigidMove.cs
     - 
-    m_Values: 01010101
-  RevisionSummary: 
+    m_Values: 010101
+  RevisionSummary: Converted player scripts to rigidbody
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0
