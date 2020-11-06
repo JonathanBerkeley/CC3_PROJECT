@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scenes/TestingScene.unity
-    - Assets/Scripts/PlayerScripts/RigidMove.cs
+    - Assets/Prefabs/Player.prefab
+    - Assets/Prefabs/Player.prefab.meta
+    - Assets/Scripts/MainMenu.cs
+    - Assets/Scripts/MainMenu.cs.meta
     - 
-    m_Values: 010101
-  RevisionSummary: Converted player scripts to rigidbody
+    m_Values: 0000000000
+  RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0
