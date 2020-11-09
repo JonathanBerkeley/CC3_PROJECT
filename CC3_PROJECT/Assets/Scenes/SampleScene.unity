@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platform: {fileID: 1232729746}
-  Player: {fileID: 0}
+  Player: {fileID: 1061933592}
 --- !u!95 &818765981
 Animator:
   serializedVersion: 3
