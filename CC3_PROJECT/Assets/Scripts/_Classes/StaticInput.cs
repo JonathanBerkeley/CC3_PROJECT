@@ -19,7 +19,6 @@ public static class StaticInput
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         jumping = Input.GetButton("Jump");
-        shooting = Input.GetButtonDown("Fire1");
     }
 
     /// <summary>
@@ -102,6 +101,15 @@ public static class StaticInput
     public static bool GetShooting()
     {
         return shooting;
+    }
+
+    /// <summary>
+    /// Get's the frame the player stops pressing the fire key
+    /// </summary>
+    /// <returns> Boolean - Returns true when the player stops shooting</returns>
+    public static bool GetStoppedShooting()
+    {
+        return stoppedShooting;
     }
 
     /// <summary>

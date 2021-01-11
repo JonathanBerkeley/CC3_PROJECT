@@ -15,14 +15,12 @@ MonoBehaviour:
   SimpleSelectedItems:
     m_Keys:
     - Assets/Scenes/TestingScene.unity
-    - Assets/Scripts/PlayerScripts/CharacterController.cs
-    - Assets/Scripts/PlayerScripts/CharacterController.cs.meta
     - Assets/Scripts/PlayerScripts/GrapplingHook.cs
-    - Assets/Scripts/PlayerScripts/GrapplingHook.cs.meta
+    - Assets/Scripts/PlayerScripts/PlayerMove.cs
+    - Assets/Scripts/PlayerScripts/RigidMove.cs
     - Assets/Scripts/_Classes/StaticInput.cs
-    - Assets/Scripts/_Classes/StaticInput.cs.meta
     - 
-    m_Values: 0000000000000000
+    m_Values: 000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

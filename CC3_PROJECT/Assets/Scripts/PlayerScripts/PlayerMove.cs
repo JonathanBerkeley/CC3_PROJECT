@@ -28,8 +28,8 @@ public class PlayerMove : MonoBehaviour
             playerVelocity.y = 0.0f;
         }
         
-        float deltaX = Input.GetAxisRaw("Horizontal") * speed;
-        float deltaZ = Input.GetAxisRaw("Vertical") * speed;
+        float deltaX = StaticInput.GetHorizontal() * speed;
+        float deltaZ = StaticInput.GetVertical() * speed;
         Vector3 pMove = new Vector3(deltaX, 0.0f, deltaZ);
 
         pMove = transform.TransformDirection(pMove);
@@ -40,7 +40,7 @@ public class PlayerMove : MonoBehaviour
         else if (accelerateDownForce && _playerController.isGrounded)
             playerVelocity.y = 0.0f;
 
-        if (playerGrounded && Input.GetButton("Jump"))
+        if (playerGrounded && StaticInput.GetJumping())
         {
             playerVelocity.y += Mathf.Sqrt(jumpPower * -3.0f * downForce);
         }

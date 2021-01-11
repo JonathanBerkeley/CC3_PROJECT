@@ -15,13 +15,6 @@ public class RigidMove : MonoBehaviour
     private Rigidbody _playerBody;
     private CapsuleCollider _playerCollider;
 
-    InputManager inputManager = new InputManager();
-
-    void Awake()
-    {
-        Debug.Log("Input Manager init - " + inputManager.DebugGetInputManagerCount());
-    }
-
     void Start()
     {
         originalMoveSpeed = moveSpeed;
@@ -36,7 +29,7 @@ public class RigidMove : MonoBehaviour
 
     void Update()
     {
-        inputManager.UpdatePlayerValues();
+        StaticInput.UpdatePlayerValues();
     }
 
     private bool IsGrounded()
@@ -66,7 +59,7 @@ public class RigidMove : MonoBehaviour
     {
         if (IsGrounded())
         {
-            if (inputManager.GetJumping())
+            if (StaticInput.GetJumping())
             {
                 //Player jump by adding vertical force, accounting for player mass.
                 _playerBody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
@@ -95,10 +88,10 @@ public class RigidMove : MonoBehaviour
         */
 
         _playerBody.AddForce(orientation.transform.forward
-            * inputManager.GetVertical() * moveSpeed * Time.deltaTime);
+            * StaticInput.GetVertical() * moveSpeed * Time.deltaTime);
 
         _playerBody.AddForce(orientation.transform.right
-            * inputManager.GetHorizontal() * moveSpeed * Time.deltaTime);
+            * StaticInput.GetHorizontal() * moveSpeed * Time.deltaTime);
         
     }
 
