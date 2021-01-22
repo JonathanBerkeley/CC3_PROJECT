@@ -60,19 +60,20 @@
     <Compile Include="Assets\Scripts\Platform\Moving_Platform.cs" />
     <Compile Include="Assets\Scripts\_Classes\InputManager.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\GrappleMain.cs" />
+    <Compile Include="Assets\Scripts\_Classes\StaticInput.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\DaniDevy_Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Platform\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\DaniDevy_Scripts\MoveCamera.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\GrapplingHook.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\DaniDevy_Scripts\RotateGun.cs" />
     <Compile Include="Assets\_UNSORTED\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\FPMovement.cs" />
     <Compile Include="Assets\Scripts\Platform\platformAttach.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\GrapplingHook.cs" />
-    <Compile Include="Assets\Scripts\_Classes\StaticInput.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\RigidMove2.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\_UNSORTED\TextMesh Pro\Shaders\TMPro.cginc" />

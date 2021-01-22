@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scenes/TestingScene.unity
-    - Assets/Scripts/PlayerScripts/GrapplingHook.cs
-    - Assets/Scripts/PlayerScripts/PlayerMove.cs
-    - Assets/Scripts/PlayerScripts/RigidMove.cs
-    - Assets/Scripts/_Classes/StaticInput.cs
+    - Assets/Scenes/Testing2.unity
+    - Assets/Scenes/Testing2.unity.meta
+    - Assets/Scripts/PlayerScripts/RigidMove2.cs
+    - Assets/Scripts/PlayerScripts/RigidMove2.cs.meta
     - 
-    m_Values: 000000000000
+    m_Values: 0101010101
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
