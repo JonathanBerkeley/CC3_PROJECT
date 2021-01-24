@@ -15,12 +15,9 @@ MonoBehaviour:
   SimpleSelectedItems:
     m_Keys:
     - Assets/Scenes/Testing2.unity
-    - Assets/Scenes/Testing2.unity.meta
-    - Assets/Scripts/PlayerScripts/RigidMove2.cs
-    - Assets/Scripts/PlayerScripts/RigidMove2.cs.meta
     - 
-    m_Values: 0101010101
-  RevisionSummary: 
+    m_Values: 0101
+  RevisionSummary: Updated the timestep settings to make movement much smoother
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0
