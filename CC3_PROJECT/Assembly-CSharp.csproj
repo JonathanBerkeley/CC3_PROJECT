@@ -55,7 +55,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerScripts\RigidMove.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\RigidMove3.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\DaniDevy_Scripts\GrapplingGun.cs" />
     <Compile Include="Assets\Scripts\Platform\Moving_Platform.cs" />
     <Compile Include="Assets\Scripts\_Classes\InputManager.cs" />
@@ -68,12 +68,47 @@
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\DaniDevy_Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\GrapplingHook.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\PlayerLook.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerLook1.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\RigidMove2.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\DaniDevy_Scripts\RotateGun.cs" />
     <Compile Include="Assets\_UNSORTED\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\FPMovement.cs" />
     <Compile Include="Assets\Scripts\Platform\platformAttach.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\RigidMove2.cs" />
+    <Compile Include="Assets\Multiplayer\Client.cs" />
+    <Compile Include="Assets\Prefabs\ammo\MultiplayerAmmoPack.cs" />
+    <Compile Include="Assets\Prefabs\projectile\Projectile.cs" />
+    <Compile Include="Assets\Multiplayer\ClientSend.cs" />
+    <Compile Include="Assets\Multiplayer\PlayerSend.cs" />
+    <Compile Include="Assets\Prefabs\health\MultiplayerHealthPack.cs" />
+    <Compile Include="Assets\Scripts\HoldReferences.cs" />
+    <Compile Include="Assets\Scripts\PlayerID.cs" />
+    <Compile Include="Assets\Scripts\ConfigureScene.cs" />
+    <Compile Include="Assets\Prefabs\health\HealthPack.cs" />
+    <Compile Include="Assets\Prefabs\launcher\MultiplayerLaunchProjectile.cs" />
+    <Compile Include="Assets\Multiplayer\ProjectileManager.cs" />
+    <Compile Include="Assets\Scripts\BotStats.cs" />
+    <Compile Include="Assets\MainMenu\MenuCamera.cs" />
+    <Compile Include="Assets\Scripts\MultiplayerStats.cs" />
+    <Compile Include="Assets\Scripts\BotController.cs" />
+    <Compile Include="Assets\Multiplayer\PlayerManager.cs" />
+    <Compile Include="Assets\Multiplayer\ClientHandle.cs" />
+    <Compile Include="Assets\Multiplayer\Packet.cs" />
+    <Compile Include="Assets\Scripts\MiscInputListener.cs" />
+    <Compile Include="Assets\Scripts\PlayerLook.cs" />
+    <Compile Include="Assets\Prefabs\ammo\AmmoPack.cs" />
+    <Compile Include="Assets\Multiplayer\ThreadManager.cs" />
+    <Compile Include="Assets\MainMenu\MenuInit.cs" />
+    <Compile Include="Assets\Scripts\DisableComponents.cs" />
+    <Compile Include="Assets\Prefabs\projectile\MultiplayerProjectile.cs" />
+    <Compile Include="Assets\Scripts\SpawnHandler.cs" />
+    <Compile Include="Assets\Scripts\PlayerStats.cs" />
+    <Compile Include="Assets\Prefabs\launcher\LaunchProjectile.cs" />
+    <Compile Include="Assets\Multiplayer\GameManager.cs" />
+    <Compile Include="Assets\Multiplayer\UIManager.cs" />
+    <Compile Include="Assets\Prefabs\launcher\BotLauncher.cs" />
+    <Compile Include="Assets\Scripts\SettingsData.cs" />
+    <Compile Include="Assets\Scripts\RigidMove.cs" />
+    <Compile Include="Assets\Scripts\HideUnusedPanel.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\_UNSORTED\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -14,10 +14,229 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scenes/Testing2.unity
+    - Assets/Deathsounds.meta
+    - Assets/Deathsounds/death1.ogg
+    - Assets/Deathsounds/death1.ogg.meta
+    - Assets/Deathsounds/death2.ogg
+    - Assets/Deathsounds/death2.ogg.meta
+    - Assets/Deathsounds/death3.ogg
+    - Assets/Deathsounds/death3.ogg.meta
+    - Assets/Deathsounds/death4.ogg
+    - Assets/Deathsounds/death4.ogg.meta
+    - Assets/Deathsounds/death5.ogg
+    - Assets/Deathsounds/death5.ogg.meta
+    - Assets/Deathsounds/death6.ogg
+    - Assets/Deathsounds/death6.ogg.meta
+    - Assets/Imported_asset.meta
+    - Assets/Imported_asset/EffectExamples.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/DebrisParticle.mat
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/DebrisParticle.mat.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/Embers.mat
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/Embers.mat.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/Explosion.mat
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/Explosion.mat.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/ExplosionDistortion.mat
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/ExplosionDistortion.mat.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/Lightning.mat
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/Lightning.mat.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/SmokeDark.mat
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Materials/SmokeDark.mat.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Prefabs.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Prefabs/BigExplosion.prefab
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Prefabs/BigExplosion.prefab.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Prefabs/ParticlesLight.prefab
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Prefabs/ParticlesLight.prefab.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Prefabs/TinyExplosion.prefab
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Prefabs/TinyExplosion.prefab.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/Debris.png
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/Debris.png.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/Explosion.tif
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/Explosion.tif.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/ExplosionEmission.tif
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/ExplosionEmission.tif.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/Lightning.tif
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/Lightning.tif.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/Ramp03.png
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/Ramp03.png.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/SmokePuff01.tif
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/SmokePuff01.tif.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/SphereNormal.tif
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/SphereNormal.tif.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/ramp01.png
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/ramp01.png.meta
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/shockwave.tif
+    - Assets/Imported_asset/EffectExamples/Fire & Explosion Effects/Textures/shockwave.tif.meta
+    - Assets/Imported_asset/Free Pack.meta
+    - Assets/Imported_asset/Free Pack/Explosion 1.wav
+    - Assets/Imported_asset/Free Pack/Explosion 1.wav.meta
+    - Assets/MainMenu.meta
+    - Assets/MainMenu/MenuCamera.cs
+    - Assets/MainMenu/MenuCamera.cs.meta
+    - Assets/MainMenu/MenuInit.cs
+    - Assets/MainMenu/MenuInit.cs.meta
+    - Assets/MainMenu/roboto.ttf
+    - Assets/MainMenu/roboto.ttf.meta
+    - Assets/Materials/Material.001 Base Color.mat
+    - Assets/Materials/Material.001 Base Color.mat.meta
+    - Assets/ModdedAssets.meta
+    - Assets/ModdedAssets/Materials.meta
+    - Assets/ModdedAssets/Materials/ground1.mat
+    - Assets/ModdedAssets/Materials/ground1.mat.meta
+    - Assets/ModdedAssets/ground1.png
+    - Assets/ModdedAssets/ground1.png.meta
+    - Assets/Multiplayer.meta
+    - Assets/Multiplayer/Client.cs
+    - Assets/Multiplayer/Client.cs.meta
+    - Assets/Multiplayer/ClientHandle.cs
+    - Assets/Multiplayer/ClientHandle.cs.meta
+    - Assets/Multiplayer/ClientSend.cs
+    - Assets/Multiplayer/ClientSend.cs.meta
+    - Assets/Multiplayer/GameManager.cs
+    - Assets/Multiplayer/GameManager.cs.meta
+    - Assets/Multiplayer/Packet.cs
+    - Assets/Multiplayer/Packet.cs.meta
+    - Assets/Multiplayer/PlayerManager.cs
+    - Assets/Multiplayer/PlayerManager.cs.meta
+    - Assets/Multiplayer/PlayerSend.cs
+    - Assets/Multiplayer/PlayerSend.cs.meta
+    - Assets/Multiplayer/ProjectileManager.cs
+    - Assets/Multiplayer/ProjectileManager.cs.meta
+    - Assets/Multiplayer/ThreadManager.cs
+    - Assets/Multiplayer/ThreadManager.cs.meta
+    - Assets/Multiplayer/UIManager.cs
+    - Assets/Multiplayer/UIManager.cs.meta
+    - Assets/Player 5.prefab
+    - Assets/Player 5.prefab.meta
+    - Assets/Prefabs/Bot.prefab
+    - Assets/Prefabs/Bot.prefab.meta
+    - Assets/Prefabs/Bot2.prefab
+    - Assets/Prefabs/Bot2.prefab.meta
+    - Assets/Prefabs/Player.prefab
+    - Assets/Prefabs/Player.prefab.meta
+    - Assets/Prefabs/ammo.meta
+    - Assets/Prefabs/ammo/AmmoPack.cs
+    - Assets/Prefabs/ammo/AmmoPack.cs.meta
+    - Assets/Prefabs/ammo/Ammopack.prefab
+    - Assets/Prefabs/ammo/Ammopack.prefab.meta
+    - Assets/Prefabs/ammo/MultiplayerAmmoPack.cs
+    - Assets/Prefabs/ammo/MultiplayerAmmoPack.cs.meta
+    - Assets/Prefabs/ammo/ammo.wav
+    - Assets/Prefabs/ammo/ammo.wav.meta
+    - Assets/Prefabs/ammo/ammobox.fbx
+    - Assets/Prefabs/ammo/ammobox.fbx.meta
+    - Assets/Prefabs/ammo/boxtexture.png
+    - Assets/Prefabs/ammo/boxtexture.png.meta
+    - Assets/Prefabs/health.meta
+    - Assets/Prefabs/health/HealthPack.cs
+    - Assets/Prefabs/health/HealthPack.cs.meta
+    - Assets/Prefabs/health/Healthpack.prefab
+    - Assets/Prefabs/health/Healthpack.prefab.meta
+    - Assets/Prefabs/health/Material.001 Metallic.png
+    - Assets/Prefabs/health/Material.001 Metallic.png.meta
+    - Assets/Prefabs/health/Materials.meta
+    - Assets/Prefabs/health/Materials/Material.001 Metallic.mat
+    - Assets/Prefabs/health/Materials/Material.001 Metallic.mat.meta
+    - Assets/Prefabs/health/MultiplayerHealthPack.cs
+    - Assets/Prefabs/health/MultiplayerHealthPack.cs.meta
+    - Assets/Prefabs/health/packmodel.fbx
+    - Assets/Prefabs/health/packmodel.fbx.meta
+    - Assets/Prefabs/health/regenerate.wav
+    - Assets/Prefabs/health/regenerate.wav.meta
+    - Assets/Prefabs/health/spawn_item.wav
+    - Assets/Prefabs/health/spawn_item.wav.meta
+    - Assets/Prefabs/launcher.meta
+    - Assets/Prefabs/launcher/BotLauncher.cs
+    - Assets/Prefabs/launcher/BotLauncher.cs.meta
+    - Assets/Prefabs/launcher/LaunchProjectile.cs
+    - Assets/Prefabs/launcher/LaunchProjectile.cs.meta
+    - Assets/Prefabs/launcher/Material.002 Metallix.png
+    - Assets/Prefabs/launcher/Material.002 Metallix.png.meta
+    - Assets/Prefabs/launcher/Materials.meta
+    - Assets/Prefabs/launcher/Materials/Material.002 Metallix.mat
+    - Assets/Prefabs/launcher/Materials/Material.002 Metallix.mat.meta
+    - Assets/Prefabs/launcher/MultiplayerLaunchProjectile.cs
+    - Assets/Prefabs/launcher/MultiplayerLaunchProjectile.cs.meta
+    - Assets/Prefabs/launcher/TinyExplosion Variant.prefab
+    - Assets/Prefabs/launcher/TinyExplosion Variant.prefab.meta
+    - Assets/Prefabs/launcher/rocketlaunch.wav
+    - Assets/Prefabs/launcher/rocketlaunch.wav.meta
+    - Assets/Prefabs/launcher/untitled.fbx
+    - Assets/Prefabs/launcher/untitled.fbx.meta
+    - Assets/Prefabs/projectile.meta
+    - Assets/Prefabs/projectile/Material.001 Base Color.png
+    - Assets/Prefabs/projectile/Material.001 Base Color.png.meta
+    - Assets/Prefabs/projectile/MultiplayerProjectile.cs
+    - Assets/Prefabs/projectile/MultiplayerProjectile.cs.meta
+    - Assets/Prefabs/projectile/Projectile.cs
+    - Assets/Prefabs/projectile/Projectile.cs.meta
+    - Assets/Prefabs/projectile/missile_b.fbx
+    - Assets/Prefabs/projectile/missile_b.fbx.meta
+    - Assets/Prefabs/projectile/missile_c.prefab
+    - Assets/Prefabs/projectile/missile_c.prefab.meta
+    - Assets/Prefabs/projectile/missile_d.prefab
+    - Assets/Prefabs/projectile/missile_d.prefab.meta
+    - Assets/Prefabs/projectile/missile_e.prefab
+    - Assets/Prefabs/projectile/missile_e.prefab.meta
+    - Assets/Prefabs/projectile/missile_f.prefab
+    - Assets/Prefabs/projectile/missile_f.prefab.meta
+    - Assets/Scenes/GameScene.meta
+    - Assets/Scenes/GameScene.unity
+    - Assets/Scenes/GameScene.unity.meta
+    - Assets/Scenes/GameScene/LightingData.asset
+    - Assets/Scenes/GameScene/LightingData.asset.meta
+    - Assets/Scenes/GameScene/ReflectionProbe-0.exr
+    - Assets/Scenes/GameScene/ReflectionProbe-0.exr.meta
+    - Assets/Scripts/BotController.cs
+    - Assets/Scripts/BotController.cs.meta
+    - Assets/Scripts/BotStats.cs
+    - Assets/Scripts/BotStats.cs.meta
+    - Assets/Scripts/ConfigureScene.cs
+    - Assets/Scripts/ConfigureScene.cs.meta
+    - Assets/Scripts/DisableComponents.cs
+    - Assets/Scripts/DisableComponents.cs.meta
+    - Assets/Scripts/HideUnusedPanel.cs
+    - Assets/Scripts/HideUnusedPanel.cs.meta
+    - Assets/Scripts/HoldReferences.cs
+    - Assets/Scripts/HoldReferences.cs.meta
+    - Assets/Scripts/MiscInputListener.cs
+    - Assets/Scripts/MiscInputListener.cs.meta
+    - Assets/Scripts/MultiplayerStats.cs
+    - Assets/Scripts/MultiplayerStats.cs.meta
+    - Assets/Scripts/PlayerID.cs
+    - Assets/Scripts/PlayerID.cs.meta
+    - Assets/Scripts/PlayerLook.cs
+    - Assets/Scripts/PlayerLook.cs.meta
+    - Assets/Scripts/PlayerScripts/PlayerLook1.cs
+    - Assets/Scripts/PlayerScripts/PlayerLook1.cs.meta
+    - Assets/Scripts/PlayerScripts/RigidMove3.cs
+    - Assets/Scripts/PlayerScripts/RigidMove3.cs.meta
+    - Assets/Scripts/PlayerStats.cs
+    - Assets/Scripts/PlayerStats.cs.meta
+    - Assets/Scripts/RigidMove.cs
+    - Assets/Scripts/RigidMove.cs.meta
+    - Assets/Scripts/SettingsData.cs
+    - Assets/Scripts/SettingsData.cs.meta
+    - Assets/Scripts/SpawnHandler.cs
+    - Assets/Scripts/SpawnHandler.cs.meta
+    - Assets/UIAssets.meta
+    - Assets/UIAssets/crosshair.png
+    - Assets/UIAssets/crosshair.png.meta
+    - Assets/UIAssets/hp (1).png
+    - Assets/UIAssets/hp (1).png.meta
+    - Assets/UIAssets/hp (2).png
+    - Assets/UIAssets/hp (2).png.meta
+    - Assets/UIAssets/hp (3).png
+    - Assets/UIAssets/hp (3).png.meta
+    - Assets/UIAssets/hp (4).png
+    - Assets/UIAssets/hp (4).png.meta
+    - Assets/_UNSORTED/AssetStoreOriginals/_SNAPS_PrototypingAssets/Scripts/Editor/PackageChecker/PackageChecker.cs
+    - Assets/_UNSORTED/AssetStoreOriginals/_SNAPS_PrototypingAssets/Scripts/Editor/PackageChecker/PackageChecker.cs.meta
     - 
-    m_Values: 0101
-  RevisionSummary: Updated the timestep settings to make movement much smoother
+    m_Values: 0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+  RevisionSummary: Merge with other project
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0
