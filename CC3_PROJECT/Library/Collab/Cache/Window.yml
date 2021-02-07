@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scenes/Level1.unity
-    - Assets/Scenes/Level1.unity.meta
+    - Assets/Scripts/_Classes/StaticInput.cs
+    - Assets/Scripts/_Classes/StaticInput.cs.meta
+    - Assets/Scripts/_Classes/StaticInput2.cs
+    - Assets/Scripts/_Classes/StaticInput2.cs.meta
     - 
-    m_Values: 000000
+    m_Values: 0101010101
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 
-//Jonathan Berkeley's StaticInput class
-//N00181859
 public static class StaticInput
 {
     private static float horizontal = 0.0f;
     private static float vertical = 0.0f;
     private static bool jumping = false;
     private static bool shooting = false;
-    private static bool stoppedShooting = false;
     private static bool pause = false;
 
     /// <summary>
@@ -19,6 +16,7 @@ public static class StaticInput
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         jumping = Input.GetButton("Jump");
+        shooting = Input.GetButtonDown("Fire1");
     }
 
     /// <summary>
@@ -52,15 +50,6 @@ public static class StaticInput
     {
         shooting = Input.GetButtonDown("Fire1");
     }
-
-    /// <summary>
-    /// For any scripts that need to know if the player has stopped shooting
-    /// </summary>
-    public static void UpdateStoppedShooting()
-    {
-        stoppedShooting = Input.GetButtonUp("Fire1");
-    }
-
 
     public static void UpdatePauseCheck()
     {
@@ -101,15 +90,6 @@ public static class StaticInput
     public static bool GetShooting()
     {
         return shooting;
-    }
-
-    /// <summary>
-    /// Get's the frame the player stops pressing the fire key
-    /// </summary>
-    /// <returns> Boolean - Returns true when the player stops shooting</returns>
-    public static bool GetStoppedShooting()
-    {
-        return stoppedShooting;
     }
 
     /// <summary>
