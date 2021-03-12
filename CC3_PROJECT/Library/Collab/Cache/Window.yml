@@ -14,14 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scripts/_Classes/StaticInput.cs
-    - Assets/Scripts/_Classes/StaticInput.cs.meta
-    - Assets/Scripts/_Classes/StaticInput2.cs
-    - Assets/Scripts/_Classes/StaticInput2.cs.meta
     - 
-    m_Values: 0101010101
+    m_Values: 01
   RevisionSummary: 
   ChangesSearchValue: 
-  SelectedHistoryRevision: 
+  SelectedHistoryRevision: 0853d8ea82ee16494541d8fd498f6c3e72652870
   HistoryPageNumber: 0
-  TabIndex: 0
+  TabIndex: 1

@@ -5,56 +5,57 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-   public GameObject pauseMenu;
 
-    public bool isPaused = false;
+    public GameObject pause_Menu;
 
- 
-
-   void Update()
-   {
-       if(Input.GetButtonDown("Cancel"))
-       {
-           if(isPaused == false)
-           {
-               Time.timeScale = 0;
-               isPaused = true;
-               Cursor.visible = true;
-               pauseMenu.SetActive(true);
-           }
-           else
-           {
-               pauseMenu.SetActive(false);
-               Cursor.visible = false;
-               isPaused = false;
-               Time.timeScale = 1;
-           }
-       }
-
-       if(Input.GetButtonDown("Shift"))
+    // Start is called before the first frame update
+    void Start()
     {
-        if(isPaused == true)
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("MainMenu");
-        }
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
-   }
+    // Update is called once per frame
+    void Update()
+    {
+
+
+        if (Input.GetKeyDown(KeyCode.P) && pause_Menu.activeInHierarchy == false)
+        {
+            pause_Menu.SetActive(true);
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        }
+         else if ( Input.GetKeyDown(KeyCode.P) && pause_Menu.activeInHierarchy == true)
+        {
+
+            Time.timeScale = 1;
+            pause_Menu.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+
+            Cursor.visible = false;
+        }
+
+
+    }
     public void ResumeGame()
     {
-               pauseMenu.SetActive(false);
+               pause_Menu.SetActive(false);
                Cursor.visible = false;
-               isPaused = false;
-               Time.timeScale = 1;   
+               Time.timeScale = 1;
     }
-        
     public void GoToMainMenu()
     {
+        
+SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
-}
+
+    }

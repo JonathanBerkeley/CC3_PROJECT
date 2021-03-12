@@ -25,6 +25,10 @@ public class PlayerLook1 : MonoBehaviour
 
     void Update()
     {
+        if(!Pause.paused){
+
+
+       
         if (lockCursor)
             Cursor.lockState = CursorLockMode.Locked;
         else
@@ -44,5 +48,6 @@ public class PlayerLook1 : MonoBehaviour
             float rotationY = transform.localEulerAngles.y;
             transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
         }
+    }
     }
 }
