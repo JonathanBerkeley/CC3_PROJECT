@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FlagTranslations;
 using System.Net;
 using UnityEngine;
 
 public class ClientHandle : MonoBehaviour
 {
-    public GameObject projectilePrefab;
+
     public static void Welcome(Packet _packet)
     {
         string _msg = _packet.ReadString();
@@ -29,13 +30,35 @@ public class ClientHandle : MonoBehaviour
         GameManager.instance.SpawnPlayer(_id, _username, _position, _rotation);
     }
 
+    public static void PlayerDisconnected(Packet _packet)
+    {
+        //The ID of the disconnected player
+        int _id = _packet.ReadInt();
+
+        //Destroy the in-game prefab of this player
+        Destroy(GameManager.players[_id].gameObject);
+        GameManager.players.Remove(_id);
+    }
+
     public static void PlayerPosition(Packet _packet)
     {
         int _id = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
         
         //Debug.Log("Position was read for player with ID " + _id + " : " + _position);
-        GameManager.players[_id].transform.position = _position;
+
+        /*
+        foreach (var p in GameManager.players)
+        {
+            Debug.Log($"Key : {p.Key}, Value: {p.Value.username}");
+        }
+        */
+
+        if (GameManager.players.ContainsKey(_id))
+        {
+            GameManager.players[_id].transform.position = _position;
+        }
+        
     }
     
     public static void PlayerRotation(Packet _packet)
@@ -44,7 +67,12 @@ public class ClientHandle : MonoBehaviour
         Quaternion _rotation = _packet.ReadQuaternion();
         
         //Debug.Log("Rotation was read for player with ID " + _id + " : " + _rotation);
-        GameManager.players[_id].transform.rotation = _rotation;
+
+        if (GameManager.players.ContainsKey(_id))
+        {
+            GameManager.players[_id].transform.rotation = _rotation;
+        }
+        
     }
 
     public static void ProjectileData(Packet _packet)
@@ -53,7 +81,24 @@ public class ClientHandle : MonoBehaviour
         Vector3 _location = _packet.ReadVector3();
         Quaternion _rotation = _packet.ReadQuaternion();
 
+        GameManager.instance.CreateProjectile(_id, _location, _rotation);
+    }
 
+    public static void ClientChat(Packet _packet)
+    {
+        int _id = _packet.ReadInt();
+        string _message = _packet.ReadString();
+        Debug.Log($"Message from {GameManager.players[_id].username}: {_message}");
+
+        GameManager.instance.ReceiveChat(_id, _message);
+
+    }
+
+    public static void ServerControlMessages(Packet _packet)
+    {
+        ServerCodeTranslations _msg = (ServerCodeTranslations)_packet.ReadInt();
+
+        GameManager.instance.ProcessServerMessage(_msg);
     }
 
     /* For testing UDP

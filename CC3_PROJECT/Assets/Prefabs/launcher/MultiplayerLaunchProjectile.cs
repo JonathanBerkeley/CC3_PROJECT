@@ -6,7 +6,7 @@ using UnityEngine;
 //Multiplayer variant of LaunchProjectile
 public class MultiplayerLaunchProjectile : MonoBehaviour
 {
-    public float projectileSpeed = 50.0f;
+    public static float projectileSpeed = 50.0f;
     public float adjustSpawnPositionY = 0.3f;
     public float launchDelay = 1.0f;
 
@@ -49,7 +49,6 @@ public class MultiplayerLaunchProjectile : MonoBehaviour
                 _playerStats.SetAmmo(--_pAmmo);
                 StartCoroutine(PauseFiring());
             }
-
         }
 
         //Keeps the firing particle effects on the launcher regardless of speed
@@ -74,7 +73,9 @@ public class MultiplayerLaunchProjectile : MonoBehaviour
         //Creates rocket at top of launcher
         GameObject projectile = Instantiate(projectilePrefab, adjustedPosition, transform.rotation);
 
-        ClientSend.ProjectileLaunchData(adjustedPosition, transform.rotation);
+        //ClientSend.ProjectileLaunchData(adjustedPosition, transform.rotation);
+
+        SendProjectileDataToServer(projectile);
 
 
         //Gives the rocket an ID to parent so that it doesn't collide with owner of rocket
@@ -96,5 +97,12 @@ public class MultiplayerLaunchProjectile : MonoBehaviour
         canLaunch = false;
         yield return new WaitForSeconds(launchDelay);
         canLaunch = true;
+    }
+
+    private void SendProjectileDataToServer(GameObject projectile)
+    {
+        var _location = projectile.transform.position;
+        var _rotation = projectile.transform.rotation;
+        ClientSend.ProjectileLaunchData(_location, _rotation);
     }
 }

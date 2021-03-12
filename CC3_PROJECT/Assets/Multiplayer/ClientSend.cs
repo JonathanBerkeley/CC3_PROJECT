@@ -23,6 +23,7 @@ public class ClientSend : MonoBehaviour
         {
             _packet.Write(Client.instance.myId);
             _packet.Write(UIManager.instance.usernameField.text);
+            _packet.Write(Constants.CLIENT_VERSION);
 
             SendTCPData(_packet);
         }
@@ -50,6 +51,15 @@ public class ClientSend : MonoBehaviour
             _packet.Write(_rotation);
 
             SendUDPData(_packet);
+        }
+    }
+
+    public static void ClientChatData(string _message)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.userMessage))
+        {
+            _packet.Write(_message);
+            SendTCPData(_packet);
         }
     }
 

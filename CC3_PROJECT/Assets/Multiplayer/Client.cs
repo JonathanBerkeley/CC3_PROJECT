@@ -4,13 +4,14 @@ using UnityEngine;
 using System.Net;
 using System.Net.Sockets;
 using System;
+using FlagTranslations;
 
 public class Client : MonoBehaviour
 {
     public static Client instance;
     public static int dataBufferSize = 4096;
 
-    public string ip = "127.0.0.1";
+    public string ip = "";
     public int port = 24745;
     public int myId = 0;
     public TCP tcp;
@@ -37,14 +38,14 @@ public class Client : MonoBehaviour
     private void Start()
     {
         tcp = new TCP();
-        udp = new UDP();
     }
 
     private void OnApplicationQuit()
     {
-        Disconnect();
+        Disconnect("OnApplicationQuit hooked");
     }
 
+    //Without an IP (for testing)
     public void ConnectToServer()
     {
         InitializeClientData();
@@ -54,10 +55,44 @@ public class Client : MonoBehaviour
 
     public void ConnectToServer(string withIP)
     {
-        this.ip = withIP;
-        InitializeClientData();
-        isConnected = true;
-        tcp.Connect();
+        //Checks if the IP is valid and the port is open on this games 
+        //&& CheckPortOpen(withIP, port, new TimeSpan(0, 0, 5))
+        if (IPAddress.TryParse(withIP, out _) )
+        {
+            this.ip = withIP;
+            udp = new UDP();
+            InitializeClientData();
+            isConnected = true;
+            tcp.Connect();
+
+        }
+        else
+        {
+            AsyncSlave.slave.AddTask(() =>
+            {
+                UIManager.instance.RestoreUI();
+            });
+        }
+    }
+    /*
+    * With thanks to https://stackoverflow.com/questions/11837541/check-if-a-port-is-open
+    */
+    private bool CheckPortOpen(string host, int port, TimeSpan timeout)
+    {
+        try
+        {
+            using (var client = new TcpClient())
+            {
+                IAsyncResult response = client.BeginConnect(host, port, null, null);
+                bool portStatus = response.AsyncWaitHandle.WaitOne(timeout);
+                client.EndConnect(response);
+                return portStatus;
+            }
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public class TCP
@@ -77,12 +112,31 @@ public class Client : MonoBehaviour
             };
 
             receiveBuffer = new byte[dataBufferSize];
-            socket.BeginConnect(instance.ip, instance.port, ConnectCallback, socket);
+            try
+            {
+                socket.BeginConnect(instance.ip, instance.port, ConnectCallback, socket);
+            }
+            catch (SocketException sx)
+            {
+                Debug.Log($"Host not found: {sx}");
+                Disconnect(sx.ToString());
+            }
         }
 
         private void ConnectCallback(IAsyncResult _result)
         {
-            socket.EndConnect(_result);
+            try
+            {
+                socket.EndConnect(_result);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log($"ConnectCallback error: {ex}");
+                Disconnect(ex.ToString());
+
+                //Tell user the reason for the failed connection
+                GameManager.instance.ProcessClientMessage(ClientCodeTranslations.connectionRefused);
+            }
             if (!socket.Connected)
             {
                 return;
@@ -104,7 +158,8 @@ public class Client : MonoBehaviour
                     stream.BeginWrite(_packet.ToArray(), 0, _packet.Length(), null, null);
                 }
 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Debug.Log($"Error sending data to server via TCP: {ex}");
             }
@@ -118,7 +173,7 @@ public class Client : MonoBehaviour
                 int _byteLength = stream.EndRead(_result);
                 if (_byteLength <= 0)
                 {
-                    instance.Disconnect();
+                    instance.Disconnect($"_byteLength <= 0(Fatal)");
                     return;
                 }
 
@@ -128,9 +183,10 @@ public class Client : MonoBehaviour
                 receivedData.Reset(HandleData(_data));
                 stream.BeginRead(receiveBuffer, 0, dataBufferSize, ReceiveCallback, null);
             }
-            catch
+            catch (Exception ex)
             {
-                Disconnect();
+                Debug.Log($"ReceiveCallback caught exception: {ex}");
+                Disconnect($"Due to exception {ex}");
             }
         }
 
@@ -179,15 +235,16 @@ public class Client : MonoBehaviour
             return false;
         }
 
-        public void Disconnect()
+        internal void Disconnect(String reason)
         {
-            instance.Disconnect();
+            instance.Disconnect(reason);
 
             stream = null;
             receivedData = null;
             receiveBuffer = null;
             socket = null;
         }
+
     }
 
     public class UDP
@@ -197,6 +254,7 @@ public class Client : MonoBehaviour
 
         public UDP()
         {
+            Debug.Log($"UDP - {IPAddress.Parse(instance.ip)} {instance.port}");
             endPoint = new IPEndPoint(IPAddress.Parse(instance.ip), instance.port);
         }
 
@@ -222,7 +280,8 @@ public class Client : MonoBehaviour
                 {
                     socket.BeginSend(_packet.ToArray(), _packet.Length(), null, null);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Debug.Log($"Error sending data to server through UDP: {ex}");
             }
@@ -238,14 +297,15 @@ public class Client : MonoBehaviour
                 //Checks if there is a full packet, if not, returns outside of method
                 if (_data.Length < 4)
                 {
-                    instance.Disconnect();
+                    instance.Disconnect("Unfilled packet (Fatal)");
                     return;
                 }
 
                 HandleData(_data);
-            } catch
+            }
+            catch (Exception ex)
             {
-                Disconnect();
+                Disconnect($"UDP ReceiveCallback exception {ex}");
             }
         }
 
@@ -268,9 +328,9 @@ public class Client : MonoBehaviour
             });
         }
 
-        public void Disconnect()
+        internal void Disconnect(String reason)
         {
-            instance.Disconnect();
+            instance.Disconnect(reason);
             endPoint = null;
             socket = null;
         }
@@ -282,23 +342,48 @@ public class Client : MonoBehaviour
         {
             { (int)ServerPackets.welcome, ClientHandle.Welcome },
             { (int)ServerPackets.spawnPlayer, ClientHandle.SpawnPlayer },
+            { (int)ServerPackets.playerDisconnected, ClientHandle.PlayerDisconnected },
             { (int)ServerPackets.playerPosition, ClientHandle.PlayerPosition },
-            { (int)ServerPackets.playerRotation, ClientHandle.PlayerRotation }
+            { (int)ServerPackets.playerRotation, ClientHandle.PlayerRotation },
+            { (int)ServerPackets.projectileData, ClientHandle.ProjectileData },
+            { (int)ServerPackets.userMessage, ClientHandle.ClientChat },
+            { (int)ServerPackets.serverControlComms, ClientHandle.ServerControlMessages }
+            
             //{ (int)ServerPackets.udpTest, ClientHandle.UDPTest }
         };
         Debug.Log("Initialized packets.");
     }
 
     //Disconnects client connection
-    private void Disconnect()
+    private void Disconnect(String reason)
     {
         if (isConnected)
         {
             isConnected = false;
-            tcp.socket.Close();
-            udp.socket.Close();
 
-            Debug.Log("Disconnected from server.");
+            //Reset dictionaries
+            GameManager.instance.ResetDictionary();
+            try
+            {
+                tcp.socket.Close();
+                udp.socket.Close();
+                Debug.Log($"Disconnected from server with reason: {reason}");
+            }
+            catch (NullReferenceException ex)
+            {
+                Debug.Log("Exception in Client Disconnect: " + ex + " while attempting disconnect for reason: " + reason);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log("Exception in Client Disconnect: " + ex + " while attempting disconnect for reason: " + reason);
+            }
+            finally
+            {
+                AsyncSlave.slave.AddTask(() =>
+                {
+                    UIManager.instance.RestoreUI();
+                });
+            }
         }
     }
 
@@ -307,18 +392,18 @@ public class Client : MonoBehaviour
     {
         if (type == "UDP")
         {
-            instance.udp.Disconnect();
-        } else if (type == "TCP")
-        {
-            instance.tcp.Disconnect();
-        } else
-        {
-            instance.udp.Disconnect();
-            instance.tcp.Disconnect();
-
-            //Reset dictionaries
-            GameManager.instance.ResetDictionary();
+            instance.udp.Disconnect($"RequestClientDisconnect {type}");
         }
+        else if (type == "TCP")
+        {
+            instance.tcp.Disconnect($"RequestClientDisconnect {type}");
+        }
+        else
+        {
+            instance.udp.Disconnect($"RequestClientDisconnect {type}");
+            instance.tcp.Disconnect($"RequestClientDisconnect {type}");
+        }
+        GameManager.instance.ResetDictionary();
     }
 
     public bool GetClientConnected()
