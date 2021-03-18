@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Assets\Multiplayer\Client.cs" />
     <Compile Include="Assets\Prefabs\ammo\MultiplayerAmmoPack.cs" />
+    <Compile Include="Assets\devroot\Scripts\MultiplayerChat.cs" />
     <Compile Include="Assets\Prefabs\projectile\Projectile.cs" />
     <Compile Include="Assets\Multiplayer\ClientSend.cs" />
     <Compile Include="Assets\Multiplayer\PlayerSend.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Assets\Scripts\HoldReferences.cs" />
     <Compile Include="Assets\Scripts\PlayerID.cs" />
     <Compile Include="Assets\Scripts\ConfigureScene.cs" />
+    <Compile Include="Assets\Scripts\Menu\LevelSelect.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\RigidMove3.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\DaniDevy_Scripts\GrapplingGun.cs" />
     <Compile Include="Assets\Prefabs\health\HealthPack.cs" />
@@ -75,9 +77,11 @@
     <Compile Include="Assets\Scripts\MultiplayerStats.cs" />
     <Compile Include="Assets\Scripts\BotController.cs" />
     <Compile Include="Assets\Scripts\_Classes\InputManager.cs" />
+    <Compile Include="Assets\devroot\Multiplayer\AsyncSlave.cs" />
     <Compile Include="Assets\Multiplayer\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Teleporter.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\GrappleMain.cs" />
+    <Compile Include="Assets\devroot\Multiplayer\EnumTranslations.cs" />
     <Compile Include="Assets\Multiplayer\ClientHandle.cs" />
     <Compile Include="Assets\Multiplayer\Packet.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\DaniDevy_Scripts\PlayerMovement.cs" />
@@ -104,19 +108,19 @@
     <Compile Include="Assets\Scripts\PlayerScripts\FPMovement.cs" />
     <Compile Include="Assets\Scripts\Menu\Pause.cs" />
     <Compile Include="Assets\Multiplayer\GameManager.cs" />
+    <Compile Include="Assets\devroot\Constants.cs" />
     <Compile Include="Assets\Multiplayer\UIManager.cs" />
     <Compile Include="Assets\Prefabs\launcher\BotLauncher.cs" />
     <Compile Include="Assets\Scripts\Menu\ControlsMenu.cs" />
     <Compile Include="Assets\Scripts\SettingsData.cs" />
     <Compile Include="Assets\Scripts\Platform\platformAttach.cs" />
     <Compile Include="Assets\Scripts\RigidMove.cs" />
-    <Compile Include="Assets\Scripts\HideUnusedPanel.cs" />
-    <Compile Include="Assets\devroot\Scripts\MultiplayerChat.cs" />
-    <Compile Include="Assets\devroot\Multiplayer\AsyncSlave.cs" />
-    <Compile Include="Assets\devroot\Multiplayer\EnumTranslations.cs" />
-    <Compile Include="Assets\devroot\Constants.cs" />
     <Compile Include="Assets\devroot\Scripts\StaticInput.cs" />
-    <Compile Include="Assets\Scripts\Menu\LevelSelect.cs" />
+    <Compile Include="Assets\Scripts\HideUnusedPanel.cs" />
+    <Compile Include="Assets\devroot\Scripts\StaticError.cs" />
+    <Compile Include="Assets\devroot\Scripts\CoolMenu.cs" />
+    <Compile Include="Assets\devroot\Scripts\DisableOn.cs" />
+    <Compile Include="Assets\devroot\MainMenu\ConnectMenu.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\_UNSORTED\TextMesh Pro\Shaders\TMPro.cginc" />

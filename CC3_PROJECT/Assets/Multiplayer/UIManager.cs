@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
         usernameField.interactable = false;
         menuCamera.enabled = false;
 
-        //Remove this after dev!
+        //Shortcut to localhost
         if (ipText.text == "lh")
         {
             Client.instance.ConnectToServer("127.0.0.1");
@@ -77,7 +77,7 @@ public class UIManager : MonoBehaviour
 
     public void BackButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MenuScene");
     }
 
 

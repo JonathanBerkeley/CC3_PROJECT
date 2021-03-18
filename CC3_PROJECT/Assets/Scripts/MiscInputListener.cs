@@ -18,7 +18,7 @@ public class MiscInputListener : MonoBehaviour
 
     public static void DisconnectBackToMenu()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene("MenuScene");
         if (Client.instance != null)
         {
             Client.instance.RequestClientDisconnect("BOTH");
