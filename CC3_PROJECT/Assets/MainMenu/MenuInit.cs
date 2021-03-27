@@ -116,6 +116,8 @@ public class MenuInit : MonoBehaviour
     void ExitButtonClicked()
     {
         MenuClickAudio();
+        SceneManager.LoadScene("MainMenu");
+        /*
         if (Application.isEditor)
         {
             Type t = null;
@@ -133,6 +135,7 @@ public class MenuInit : MonoBehaviour
         {
             Application.Quit();
         }
+        */
     }
 
 
