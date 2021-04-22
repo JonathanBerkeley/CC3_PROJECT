@@ -116,6 +116,9 @@
      <Compile Include="Assets\Scripts\RigidMove.cs" />
      <Compile Include="Assets\devroot\Scripts\StaticInput.cs" />
      <Compile Include="Assets\Scripts\HideUnusedPanel.cs" />
+     <Compile Include="Assets\devroot\Scripts\AudioController.cs" />
+     <Compile Include="Assets\devroot\Scripts\OptionsMenu.cs" />
+     <Compile Include="Assets\devroot\Scripts\GlobalAudioReference.cs" />
      <None Include="Assets\_UNSORTED\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\_UNSORTED\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\_UNSORTED\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

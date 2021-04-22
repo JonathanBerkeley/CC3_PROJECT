@@ -11,10 +11,19 @@ public class ClientHandle : MonoBehaviour
     {
         string _msg = _packet.ReadString();
         int _myId = _packet.ReadInt();
+        ulong _key = _packet.ReadULong();
+        ulong _token = _packet.ReadULong();
 
         Debug.Log($"Message from server: {_msg}");
+        Debug.Log($"Validation data received: {_key} {_token}");
+
+        ulong _responseToken = GenerateValidationResponse(_key);
+
+        Debug.Log($"Token: {_token} should match {_responseToken}");
+
         Client.instance.myId = _myId;
-        ClientSend.WelcomeReceived();
+        ClientSend.WelcomeReceived(_responseToken);
+
 
         //Connecting UDP via the existing TCP connection
         Client.instance.udp.Connect(((IPEndPoint)Client.instance.tcp.socket.Client.LocalEndPoint).Port);
@@ -99,6 +108,15 @@ public class ClientHandle : MonoBehaviour
         ServerCodeTranslations _msg = (ServerCodeTranslations)_packet.ReadInt();
 
         GameManager.instance.ProcessServerMessage(_msg);
+    }
+
+    private static ulong GenerateValidationResponse(ulong _key)
+    {
+        ulong _output = _key ^ 0xDCEDCCCAAFFC;
+        _output = (_output & 0xAFCFEFBEECE) >> 4 | (_output & 0xCACCADFFEFBCB) << 4;
+        _output ^= 0xFC0C3FB10FF65435;
+
+        return _output;
     }
 
     /* For testing UDP

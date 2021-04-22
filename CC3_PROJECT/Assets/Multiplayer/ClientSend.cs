@@ -17,13 +17,14 @@ public class ClientSend : MonoBehaviour
     }
 
     #region Packets
-    public static void WelcomeReceived()
+    public static void WelcomeReceived(ulong _token)
     {
         using (Packet _packet = new Packet((int)ClientPackets.welcomeReceived))
         {
             _packet.Write(Client.instance.myId);
             _packet.Write(UIManager.instance.usernameField.text);
             _packet.Write(Constants.CLIENT_VERSION);
+            _packet.Write(_token);
 
             SendTCPData(_packet);
         }

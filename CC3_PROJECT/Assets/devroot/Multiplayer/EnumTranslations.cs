@@ -13,7 +13,8 @@ namespace FlagTranslations
         usernameTaken,
         userNotFound,
         badArguments,
-        invalidCommand
+        invalidCommand,
+        badToken
     }
 
     internal enum ClientCodeTranslations

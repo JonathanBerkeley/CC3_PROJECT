@@ -38,7 +38,7 @@ public class CoolMenu : MonoBehaviour
 
     private void ColourChange()
     {
-        //Debug.Log($"R: {image.color.r * 255} G: {image.color.g * 255} B: {image.color.b * 255}");
+        //Debug.Log($"R: {(int)(image.color.r * 255)} G: {(int)(image.color.g * 255)} B: {(int)(image.color.b * 255)}");
 
         if (image.color.r < tinyUnit * 10)
             rFlip = false;

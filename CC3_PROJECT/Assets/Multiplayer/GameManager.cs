@@ -161,6 +161,9 @@ public class GameManager : MonoBehaviour
             case ServerCodeTranslations.invalidCommand:
                 IngameError("Invalid command");
                 break;
+            case ServerCodeTranslations.badToken:
+                errorConnectMessage.text = "Couldn't authenticate client"; //If you get this error, there is a difference between your GenerateValidatonKey function and the servers.
+                break;
             default:
                 Debug.LogWarning($"Unknown error sent from server. With ID: {(int)_message}");
                 break;

@@ -155,6 +155,12 @@ public class Packet : IDisposable
     {
         buffer.AddRange(BitConverter.GetBytes(_value));
     }
+    /// <summary>Adds a ulong to the packet.</summary>
+    /// <param name="_value">The ulong to add.</param>
+    public void Write(ulong _value)
+    {
+        buffer.AddRange(BitConverter.GetBytes(_value));
+    }
     /// <summary>Adds a float to the packet.</summary>
     /// <param name="_value">The float to add.</param>
     public void Write(float _value)
@@ -297,6 +303,27 @@ public class Packet : IDisposable
         else
         {
             throw new Exception("Could not read value of type 'long'!");
+        }
+    }
+
+    /// <summary>Reads a ulong from the packet.</summary>
+    /// <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+    public ulong ReadULong(bool _moveReadPos = true)
+    {
+        if (buffer.Count > readPos)
+        {
+            // If there are unread bytes
+            ulong _value = BitConverter.ToUInt64(readableBuffer, readPos); // Convert the bytes to a ulong
+            if (_moveReadPos)
+            {
+                // If _moveReadPos is true
+                readPos += 8; // Increase readPos by 8
+            }
+            return _value; // Return the ulong
+        }
+        else
+        {
+            throw new Exception("Could not read value of type 'ulong'!");
         }
     }
 

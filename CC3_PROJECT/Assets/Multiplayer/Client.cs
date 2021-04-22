@@ -111,6 +111,9 @@ public class Client : MonoBehaviour
                 SendBufferSize = dataBufferSize
             };
 
+            socket.SendTimeout = 3000;
+            socket.ReceiveTimeout = 3000;
+
             receiveBuffer = new byte[dataBufferSize];
             try
             {
@@ -373,7 +376,7 @@ public class Client : MonoBehaviour
                 udp.socket.Close();
                 Debug.Log($"Disconnected from server with reason: {reason}");
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException ex) //Expected exception, will be thrown if disconnect called before udp instantiated (e.g tcp connect failure)
             {
                 Debug.Log("Exception in Client Disconnect: " + ex + " while attempting disconnect for reason: " + reason);
             }
