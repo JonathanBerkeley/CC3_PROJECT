@@ -8,7 +8,7 @@ public class LevelSelect : MonoBehaviour
 
     //This function makes it so that when this scene is loaded it 
     //will always display the mouse cursor and make it movable
-       void Start()
+    void Start()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -16,40 +16,35 @@ public class LevelSelect : MonoBehaviour
 
     public void Clicked()
     {
-           void Start()
-    {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    //The following functions will all take the player to the appropriate
+    //scene once they are clicked
+    public void PvP()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 
-//The following functions will all take the player to the appropriate
-//scene once they are clicked
-  public void PvP()
-{
-    SceneManager.LoadScene("MenuScene");
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
+    }
 
-}
-
-  public void Tutorial()
-{
-    SceneManager.LoadScene("SampleScene");
-
-}
-
-  public void ObstacleCourse()
-{
-    SceneManager.LoadScene("PvPCourse1");
-
-}
-public void Sandbox()
-{
-    SceneManager.LoadScene("Sandbox");
-
-}
- public void Back()
-{
-    SceneManager.LoadScene("MainMenu");
-
-}
+    public void ObstacleCourse()
+    {
+        SceneManager.LoadScene("PvPCourse1");
+        Time.timeScale = 1;
+    }
+    public void Sandbox()
+    {
+        SceneManager.LoadScene("Sandbox");
+        Time.timeScale = 1;
+    }
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

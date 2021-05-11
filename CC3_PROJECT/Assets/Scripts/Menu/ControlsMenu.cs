@@ -15,11 +15,11 @@ public class ControlsMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-  //This function makes it so that when the button is clicked it will
-  //take the player back to the main menu screen
-  public void Back()
-{
-    SceneManager.LoadScene("MainMenu");
+    //This function makes it so that when the button is clicked it will
+    //take the player back to the main menu screen
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
 
-}
+    }
 }

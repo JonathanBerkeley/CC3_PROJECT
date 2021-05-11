@@ -10,9 +10,9 @@ public class PauseMenu : MonoBehaviour
 
     // Start is called before the first frame update
 
-//This function makes it so that the mouse cursor is not viewable once the game loads in and also makes sure that
-//time is runnning which ensure that the player can move and interact with objects
-    void Start() 
+    //This function makes it so that the mouse cursor is not viewable once the game loads in and also makes sure that
+    //time is runnning which ensure that the player can move and interact with objects
+    void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
             Cursor.visible = true;
 
         }
-         else if ( Input.GetKeyDown(KeyCode.P) && pause_Menu.activeInHierarchy == true)
+        else if (Input.GetKeyDown(KeyCode.P) && pause_Menu.activeInHierarchy == true)
         {
 
             Time.timeScale = 1;
@@ -49,20 +49,20 @@ public class PauseMenu : MonoBehaviour
             Cursor.visible = false;
         }
 
-//The following functions all function very similarly in that
-//if they are clicked with the cursor they will resume the game,
-//return the player to the main menu scene or exit the game entirely
+        //The following functions all function very similarly in that
+        //if they are clicked with the cursor they will resume the game,
+        //return the player to the main menu scene or exit the game entirely
     }
     public void ResumeGame()
     {
-               pause_Menu.SetActive(false);
-               Cursor.visible = false;
-               Time.timeScale = 1;
+        pause_Menu.SetActive(false);
+        Cursor.visible = false;
+        Time.timeScale = 1;
     }
     public void GoToMainMenu()
     {
-        
-SceneManager.LoadScene("MainMenu");
+
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
@@ -70,4 +70,4 @@ SceneManager.LoadScene("MainMenu");
         Application.Quit();
     }
 
-    }
+}
