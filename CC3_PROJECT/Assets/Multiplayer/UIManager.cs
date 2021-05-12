@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
 
     public void BackButton()
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene(0);
     }
 
 

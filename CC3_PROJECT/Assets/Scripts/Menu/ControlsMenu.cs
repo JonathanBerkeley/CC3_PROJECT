@@ -19,7 +19,6 @@ public class ControlsMenu : MonoBehaviour
     //take the player back to the main menu screen
     public void Back()
     {
-        SceneManager.LoadScene("MainMenu");
-
+        SceneManager.LoadScene(0);
     }
 }

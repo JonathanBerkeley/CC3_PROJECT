@@ -24,7 +24,7 @@ public class LevelSelect : MonoBehaviour
     //scene once they are clicked
     public void PvP()
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene(0);
     }
 
     public void Tutorial()
@@ -45,6 +45,6 @@ public class LevelSelect : MonoBehaviour
     }
     public void Back()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
 }

@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     //time is runnning which ensure that the player can move and interact with objects
     void Start()
     {
+        pause_Menu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         Cursor.visible = false;
@@ -29,7 +30,6 @@ public class PauseMenu : MonoBehaviour
     // and world to once again move and interact
     void Update()
     {
-
 
         if (Input.GetKeyDown(KeyCode.P) && pause_Menu.activeInHierarchy == false)
         {
@@ -61,8 +61,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void GoToMainMenu()
     {
-
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
+        StopAllCoroutines();
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()

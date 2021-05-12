@@ -59,6 +59,7 @@
     <Compile Include="Assets\Prefabs\ammo\MultiplayerAmmoPack.cs" />
     <Compile Include="Assets\devroot\Scripts\MultiplayerChat.cs" />
     <Compile Include="Assets\Prefabs\projectile\Projectile.cs" />
+    <Compile Include="Assets\devroot\Scripts\PlayerPassport.cs" />
     <Compile Include="Assets\devroot\Scripts\AudioController.cs" />
     <Compile Include="Assets\Multiplayer\ClientSend.cs" />
     <Compile Include="Assets\Multiplayer\PlayerSend.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Assets\devroot\MainMenu\ConnectMenu.cs" />
     <Compile Include="Assets\Multiplayer\GameManager.cs" />
     <Compile Include="Assets\devroot\Scripts\OptionsMenu.cs" />
+    <Compile Include="Assets\Scripts\JointMenuCamera.cs" />
     <Compile Include="Assets\devroot\Constants.cs" />
     <Compile Include="Assets\devroot\Scripts\GlobalAudioReference.cs" />
     <Compile Include="Assets\Multiplayer\UIManager.cs" />
@@ -124,7 +126,8 @@
     <Compile Include="Assets\devroot\Scripts\StaticInput.cs" />
     <Compile Include="Assets\Scripts\HideUnusedPanel.cs" />
     <Compile Include="Assets\devroot\Scripts\MusicHandler.cs" />
-    <Compile Include="Assets\devroot\Scripts\PlayerPassport.cs" />
+    <Compile Include="Assets\Scripts\JointMenuInit.cs" />
+    <Compile Include="Assets\Scripts\InitTasks.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\_UNSORTED\TextMesh Pro\Shaders\TMPro.cginc" />

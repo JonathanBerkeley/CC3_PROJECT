@@ -3,24 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-
-
 public class Pause : MonoBehaviour
 {
-
+    public static Pause instance;
     public static bool paused = false;
     public GameObject pauseUI;
     public GameObject crosshair;
 
+
+    private void Start()
+    {
+        //Make this a singleton class
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.P))
         {
-
-
             if (paused)
             {    //resumes game
                 pauseUI.SetActive(false);
@@ -40,8 +48,8 @@ public class Pause : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
             }
         }
-
     }
+
     public void ResumeGame()
     {
         pauseUI.SetActive(false);
@@ -51,8 +59,9 @@ public class Pause : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
-
+        Time.timeScale = 1;
+        StopAllCoroutines();
+        MiscInputListener.DisconnectBackToMenu();
     }
     public void QuitGame()
     {
