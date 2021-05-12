@@ -119,10 +119,12 @@
     <Compile Include="Assets\Scripts\Menu\ControlsMenu.cs" />
     <Compile Include="Assets\Scripts\SettingsData.cs" />
     <Compile Include="Assets\Scripts\Platform\platformAttach.cs" />
+    <Compile Include="Assets\devroot\Scripts\AfterEffects.cs" />
     <Compile Include="Assets\Scripts\RigidMove.cs" />
     <Compile Include="Assets\devroot\Scripts\StaticInput.cs" />
     <Compile Include="Assets\Scripts\HideUnusedPanel.cs" />
     <Compile Include="Assets\devroot\Scripts\MusicHandler.cs" />
+    <Compile Include="Assets\devroot\Scripts\PlayerPassport.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\_UNSORTED\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -714,8 +716,14 @@
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -731,12 +739,6 @@
     </Reference>
     <Reference Include="com.unity.quicksearch">
       <HintPath>Library\ScriptAssemblies\com.unity.quicksearch.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
