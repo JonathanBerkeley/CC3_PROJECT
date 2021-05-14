@@ -6,6 +6,9 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
+/[Bb]uildDBG/
+/[Bb]uild32/
+/[Bb]uildFS/
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
