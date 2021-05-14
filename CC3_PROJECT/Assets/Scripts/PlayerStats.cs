@@ -117,7 +117,7 @@ public class PlayerStats : MonoBehaviour
             this.health += ht;
         }
 
-        if (this.health > bleedEffectThreshold)
+        if (SettingsData.bleedDesired && this.health > bleedEffectThreshold)
         {
             if (AfterEffects.instance != null)
                 AfterEffects.instance.SetVignette(false);
@@ -129,7 +129,7 @@ public class PlayerStats : MonoBehaviour
         this.health -= ht;
 
         // PostProcessing vignette bleed effect
-        if (this.health < bleedEffectThreshold)
+        if (SettingsData.bleedDesired && this.health < bleedEffectThreshold)
         {
             if (AfterEffects.instance != null)
                 AfterEffects.instance.SetVignette(true);
@@ -159,6 +159,12 @@ public class PlayerStats : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
+        if (MetaValues.instance != null)
+        {
+            MetaValues.kills = 0;
+            MetaValues.instance.SetText("0");
+        }
+
         awaitingRespawn = true;
     }
 
@@ -170,7 +176,7 @@ public class PlayerStats : MonoBehaviour
         awaitingRespawn = false;
         uiCanvas.SetActive(true);
         deathPanel.SetActive(false);
-        if (AfterEffects.instance != null)
+        if (SettingsData.bleedDesired && AfterEffects.instance != null)
             AfterEffects.instance.SetVignette(false);
 
         foreach (MonoBehaviour mb in disableOnRespawnAwait)

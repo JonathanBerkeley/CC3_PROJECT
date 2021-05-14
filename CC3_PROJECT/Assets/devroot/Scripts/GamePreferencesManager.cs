@@ -14,6 +14,12 @@ public class GamePreferencesManager : MonoBehaviour
     const string MusicKey = "Music";
     const string ResolutionKey = "Resolution";
 
+    //Game settings
+    const string FOVKey = "FOV";
+    const string BotCountKey = "BotCount";
+    const string BleedKey = "BleedOn";
+    const string HitsoundsKey = "HitsoundOn";
+
     private void Start()
     {
         if (instance == null)
@@ -48,6 +54,11 @@ public class GamePreferencesManager : MonoBehaviour
             PlayerPrefs.SetInt(ResolutionKey, VideoSettings.instance.GetResolution());
         }
 
+        PlayerPrefs.SetInt(FOVKey, SettingsData.fovDesired);
+        PlayerPrefs.SetInt(BotCountKey, SettingsData.botsDesired);
+        PlayerPrefs.SetInt(BleedKey, SettingsData.bleedDesired ? 1 : 0);
+        PlayerPrefs.SetInt(HitsoundsKey, SettingsData.hitsoundDesired ? 1 : 0);
+
         PlayerPrefs.Save();
     }
 
@@ -67,11 +78,16 @@ public class GamePreferencesManager : MonoBehaviour
 
         if (VideoSettings.instance)
         {
-            bool fsEnable = PlayerPrefs.GetInt(FullscreenKey, 0) != 0;
+            bool fsEnable = PlayerPrefs.GetInt(FullscreenKey, 0) != 0; // Defaults false
 
             VideoSettings.instance.ChangeFullscreen(fsEnable);
             VideoSettings.instance.ChangeResolution(PlayerPrefs.GetInt(ResolutionKey, 0));
         }
+
+        SettingsData.fovDesired = PlayerPrefs.GetInt(FOVKey, 80);
+        SettingsData.botsDesired = PlayerPrefs.GetInt(BotCountKey, 7);
+        SettingsData.bleedDesired = PlayerPrefs.GetInt(BleedKey, 1) == 1; // Defaults true
+        SettingsData.hitsoundDesired = PlayerPrefs.GetInt(HitsoundsKey, 1) == 1;
     }
 
     //Delete all saved preferences

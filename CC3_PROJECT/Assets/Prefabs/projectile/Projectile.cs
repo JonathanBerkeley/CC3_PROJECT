@@ -101,7 +101,11 @@ public class Projectile : MonoBehaviour
 
                     if (_bs != null)
                     {
-                        _bs.DecreaseHealth(_damage);
+                        bool _killed = _bs.DecreaseHealth(_damage);
+
+                        if (_killed && MetaValues.instance != null)
+                            MetaValues.kills++;
+                        
                     }
                 }
 
@@ -116,7 +120,7 @@ public class Projectile : MonoBehaviour
 
     private void PlaySound(int _dmg, int _id)
     {
-        if (_dmg < 1 || this.id == _id)
+        if (_dmg < 1 || this.id == _id || !SettingsData.hitsoundDesired)
             return;
 
         if (this.id == PlayerPassport.MyID && GlobalAudioReference.instance != null)

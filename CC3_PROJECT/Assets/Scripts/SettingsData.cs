@@ -5,10 +5,14 @@ using UnityEngine;
 //Class for transferring settings data across scenes
 public static class SettingsData
 {
-    private static int botsDesired = 0;
+    //Public so they can be set directly by GamePreferenceManager
+    public static int botsDesired = 7;
+    public static int fovDesired = 80;
+    public static bool bleedDesired = true;
+    public static bool hitsoundDesired = true;
+
     private static bool customBotOption = false;
     private static bool fogDesired = true;
-    
 
     //Sets
     public static void SetBotsDesired(int b)
@@ -20,6 +24,10 @@ public static class SettingsData
     public static void SetFogDesired(bool f)
     {
         fogDesired = f;
+    }
+    public static void SetFovDesired(int f)
+    {
+        fovDesired = f;
     }
     private static void SetCustomBotOption(bool cbo)
     {
@@ -36,6 +44,11 @@ public static class SettingsData
     public static bool GetFogDesired()
     {
         return fogDesired;
+    }
+
+    public static int GetFovDesired()
+    {
+        return fovDesired;
     }
 
     //Returns false if no custom bot option being used

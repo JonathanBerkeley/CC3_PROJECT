@@ -23,6 +23,18 @@ public class PlayerLook : MonoBehaviour
 
     private float _rotationX = 0.0f;
 
+    //Set FOV for camera from settings
+    private void Awake()
+    {
+        Camera _camera;
+        TryGetComponent<Camera>(out _camera);
+        
+        if (_camera != null)
+        {
+            _camera.fieldOfView = SettingsData.GetFovDesired();
+        }
+    }
+
     void Update()
     {
         if (lockCursor)

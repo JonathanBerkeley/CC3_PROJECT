@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author Jonathan
-//N00181859
+//Handles spawns for bots and players
 public class SpawnHandler : MonoBehaviour
 {
     [Range(0, 7)]
@@ -11,18 +10,19 @@ public class SpawnHandler : MonoBehaviour
     public GameObject[] players;
     public GameObject[] spawnLocations;
     public GameObject playerPrefab;
+    public bool spawnBots = true;
     public bool DEBUG_PLAYERS = false;
+    
 
     private List<GameObject> playersAsList;
     private int freeSpawns = 0;
 
     void Awake()
     {
-        //Function being called returns false if no custom bot option being used
-        if (SettingsData.GetCustomBotOption())
-        {
+        if (spawnBots)
             desiredBots = SettingsData.GetBotsDesired();
-        }
+        else
+            desiredBots = 0;
 
         if (players.Length == 0)
         {

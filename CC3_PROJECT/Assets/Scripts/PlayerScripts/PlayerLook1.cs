@@ -23,31 +23,41 @@ public class PlayerLook1 : MonoBehaviour
 
     private float _rotationX = 0.0f;
 
-    void Update()
+    //Set FOV for camera from settings
+    private void Awake()
     {
-        if(!Pause.paused){
+        Camera _camera;
+        TryGetComponent<Camera>(out _camera);
 
-
-       
-        if (lockCursor)
-            Cursor.lockState = CursorLockMode.Locked;
-        else
-            Cursor.lockState = CursorLockMode.Confined;
-        if (forceHideCursor)
-            Cursor.visible = false;
-
-        //For X
-        if (Axis == RotationAxis.MouseX)
-            transform.Rotate(0, Input.GetAxisRaw("Mouse X") * horizonitalSensitivity, 0);
-        //For Y
-        else if (Axis == RotationAxis.MouseY)
+        if (_camera != null)
         {
-            _rotationX -= Input.GetAxisRaw("Mouse Y") * verticalSensitivity;
-            _rotationX = Mathf.Clamp(_rotationX, minimumVerticalLook, maximumVerticalLook);
-
-            float rotationY = transform.localEulerAngles.y;
-            transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
+            _camera.fieldOfView = SettingsData.GetFovDesired();
         }
     }
+
+    void Update()
+    {
+        if (!Pause.paused)
+        {
+            if (lockCursor)
+                Cursor.lockState = CursorLockMode.Locked;
+            else
+                Cursor.lockState = CursorLockMode.Confined;
+            if (forceHideCursor)
+                Cursor.visible = false;
+
+            //For X
+            if (Axis == RotationAxis.MouseX)
+                transform.Rotate(0, Input.GetAxisRaw("Mouse X") * horizonitalSensitivity, 0);
+            //For Y
+            else if (Axis == RotationAxis.MouseY)
+            {
+                _rotationX -= Input.GetAxisRaw("Mouse Y") * verticalSensitivity;
+                _rotationX = Mathf.Clamp(_rotationX, minimumVerticalLook, maximumVerticalLook);
+
+                float rotationY = transform.localEulerAngles.y;
+                transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
+            }
+        }
     }
 }

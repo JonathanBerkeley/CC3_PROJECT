@@ -10,6 +10,7 @@ public class MultiplayerProjectile : MonoBehaviour
     public float blastForce = 2000.0f;
     public GameObject explosionEffect;
     public AudioClip explosionAudio;
+    public AudioClip hitSound;
 
     private int id;
     private float countdown;
@@ -58,7 +59,7 @@ public class MultiplayerProjectile : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(explosionAudio, transform.position, 0.5f);
         }
-        
+
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, blastRadius);
 
@@ -75,8 +76,8 @@ public class MultiplayerProjectile : MonoBehaviour
                 float distanceFromExplosion = Vector3.Distance(transform.position, rb.transform.position);
                 GameObject _playerHit = rb.transform.root.gameObject;
                 int _damage = 0;
-
-                if (PlayerID.GetIDByGameObject(rb.gameObject) != this.id)
+                int _id = PlayerID.GetIDByGameObject(rb.gameObject);
+                if (_id != this.id)
                 {
                     if (distanceFromExplosion < 2.0f)
                     {
@@ -101,24 +102,27 @@ public class MultiplayerProjectile : MonoBehaviour
                     //Reduced damage for author of rocket to encourage rocket jumping
                     _damage = 5;
                 }
-                try
-                {
-                    _playerHit.GetComponent<MultiplayerStats>().DecreaseHealth(_damage);
-                }
-                catch
-                {
-                    //Wasn't a player
-                    try
-                    {
-                        _playerHit.GetComponent<BotStats>().DecreaseHealth(_damage);
-                    }
-                    catch
-                    {
-                        //Wasn't a bot either!
-                    }
 
+                //Decrease health of hit player/bot
+                MultiplayerStats _ps;
+                _playerHit.TryGetComponent(out _ps);
+                if (_ps != null)
+                {
+                    _ps.DecreaseHealth(_damage);
+                }
+                else
+                {
+                    //There should not be bots in multiplayer, but left in to make future expansion easier
+                    BotStats _bs;
+                    _playerHit.TryGetComponent(out _bs);
+
+                    if (_bs != null)
+                    {
+                        _bs.DecreaseHealth(_damage);
+                    }
                 }
 
+                PlaySound(_damage, _id);
 
                 //print(_playerHit.name + " was " + distanceFromExplosion + " from explosion and took " + _damage + " damage");
             }
@@ -127,6 +131,18 @@ public class MultiplayerProjectile : MonoBehaviour
         //Cleanup for efficiency
         Destroy(explosionObject, 3);
         Destroy(gameObject);
+    }
+
+    private void PlaySound(int _dmg, int _id)
+    {
+        if (_dmg < 1 || this.id == _id || !SettingsData.hitsoundDesired)
+            return;
+
+        if (this.id == PlayerPassport.MyID && GlobalAudioReference.instance != null)
+        {
+            Vector3 audioListener = FindObjectOfType<AudioListener>().transform.position;
+            AudioSource.PlayClipAtPoint(hitSound, audioListener, GlobalAudioReference.instance.GetEffectsVolume());
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

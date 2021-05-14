@@ -19,7 +19,7 @@ public class ClientHandle : MonoBehaviour
 
         ulong _responseToken = GenerateValidationResponse(_key);
 
-        Debug.Log($"Token: {_token} should match {_responseToken}");
+        Debug.Log($"Authentication token: {_responseToken}");
 
         Client.instance.myId = _myId;
         ClientSend.WelcomeReceived(_responseToken);
