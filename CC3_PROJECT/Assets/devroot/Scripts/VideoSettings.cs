@@ -11,8 +11,8 @@ public class VideoSettings : MonoBehaviour
     public Toggle fog;
     public Dropdown resolution;
 
-    private static bool fsInitial, fogInitial;
-    private static int resInitial = 0;
+    private static bool fsInitial;
+    private static int resInitial;
 
     void Start()
     {
@@ -28,11 +28,11 @@ public class VideoSettings : MonoBehaviour
         }
 
         fsInitial = Screen.fullScreen;
+        resInitial = TranslateResolution(Screen.height);
 
-        resInitial = 1;
-        
         fullScreen.onValueChanged.AddListener(
-            delegate {
+            delegate 
+            {
                 MaintainSelections(0); 
             });
 
@@ -58,7 +58,6 @@ public class VideoSettings : MonoBehaviour
                 fsInitial = fullScreen.isOn;
                 break;
             case 1:
-                //Fog
                 break;
             case 2:
                 //Resolution
@@ -66,6 +65,22 @@ public class VideoSettings : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    //Translates resolution to saveable value
+    private int TranslateResolution(int _height)
+    {
+        switch (_height)
+        {
+            case 1080:
+                return 0;
+            case 720:
+                return 1;
+            case 600:
+                return 2;
+            default:
+                return 0;
         }
     }
 
@@ -82,19 +97,17 @@ public class VideoSettings : MonoBehaviour
         {
             case 0:
                 Screen.SetResolution(1920, 1080, Screen.fullScreen);
-                resInitial = 0;
                 break;
             case 1:
                 Screen.SetResolution(1280, 720, Screen.fullScreen);
-                resInitial = 1;
                 break;
             case 2:
                 Screen.SetResolution(800, 600, Screen.fullScreen);
-                resInitial = 2;
                 break;
             default:
                 break;
         }
+        resInitial = res;
     }
 
     public int GetResolution()

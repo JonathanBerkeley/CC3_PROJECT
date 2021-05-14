@@ -79,4 +79,9 @@ public class GamePreferencesManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
     }
+
+    public int GetResEarly()
+    {
+        return PlayerPrefs.GetInt(ResolutionKey, 0);
+    }
 }
