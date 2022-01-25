@@ -3,7 +3,8 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com)
 
 # Inertia
-This game features a character with a rocket launcher or a grapple, they can use these tools to propel themselves through the world. Battle with bots or with other players in this singleplayer/multiplayer open-source ~~Quake clone~~ game!    
+This game features a character with a rocket launcher or a grapple, they can use these tools to propel themselves through the world.    
+Battle with bots or with other players in this singleplayer/multiplayer open-source ~~Quake clone~~ game!    
 
 A singleplayer & multiplayer video-game with combat and physics mechanics    
 Main GitHub repository for my IADT Creative Computing Year 3 Professional Practice Project    
