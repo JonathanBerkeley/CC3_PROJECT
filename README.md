@@ -10,8 +10,8 @@ Main GitHub repository for my IADT Creative Computing Year 3 Professional Practi
 ```Unity Game - Unity version 2020.1.6f1```
 
 # Repositories involved in this project
-https://github.com/JonathanBerkeley/Server    
 https://github.com/JonathanBerkeley/InertiaCombat/    
+https://github.com/JonathanBerkeley/Server    
 Majority of the code commits are located in the above two repositories    
 
 # Downloads
