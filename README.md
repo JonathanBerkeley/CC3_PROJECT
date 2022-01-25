@@ -3,8 +3,11 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com)
 
 # Inertia
+This game features a character with a rocket launcher or a grapple, they can use these tools to propel themselves through the world. Battle with bots or with other players in this singleplayer/multiplayer open-source ~~Quake clone~~ game!    
+
 A singleplayer & multiplayer video-game with combat and physics mechanics    
 Main GitHub repository for my IADT Creative Computing Year 3 Professional Practice Project    
+```Unity Game - Unity version 2020.1.6f1```
 
 # Repositories involved in this project
 https://github.com/JonathanBerkeley/Server    
@@ -19,6 +22,8 @@ Server:
 
 # Documentation
 Full documentation of the game is available here:    
-[Documentation PDF](https://github.com/JonathanBerkeley/Inertia/blob/master/Inertia.pdf)
+[Documentation PDF](https://github.com/JonathanBerkeley/Inertia/blob/master/Inertia.pdf)    
 
-### Unity Game - Unity version 2020.1.6f1
+[![Gameplay example](https://i.imgur.com/vwpBIco.png)](https://imgur.com/a/VoL2X6u)    
+[![Server connection example](https://i.imgur.com/kYFpIwu.png)](https://imgur.com/a/VoL2X6u)    
+[![Multiplayer server example](https://i.imgur.com/X4DZMPL.png)](https://imgur.com/a/VoL2X6u)    
