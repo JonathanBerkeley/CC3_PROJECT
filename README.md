@@ -6,9 +6,10 @@
 A singleplayer & multiplayer video-game with combat and physics mechanics    
 Main GitHub repository for my IADT Creative Computing Year 3 Professional Practice Project    
 
-# Other repositories involved in this project
+# Repositories involved in this project
 https://github.com/JonathanBerkeley/Server    
-https://github.com/JonathanBerkeley/GameDevFPS/    
+https://github.com/JonathanBerkeley/InertiaCombat/    
+Majority of the code commits are located in the above two repositories    
 
 # Downloads
 Game:
@@ -16,5 +17,8 @@ Game:
 Server:
 [Latest release](https://github.com/JonathanBerkeley/Server/releases/tag/1.0.8)
 
+# Documentation
+Full documentation of the game is available here:    
+[Documentation PDF](https://github.com/JonathanBerkeley/Inertia/blob/master/Inertia.pdf)
 
 ### Unity Game - Unity version 2020.1.6f1
