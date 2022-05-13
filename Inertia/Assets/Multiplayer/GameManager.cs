@@ -164,6 +164,9 @@ public class GameManager : MonoBehaviour
             case ServerCodeTranslations.badToken:
                 errorConnectMessage.text = "Couldn't authenticate client"; //If you get this error, there is a difference between your GenerateValidatonKey function and the servers.
                 break;
+            case ServerCodeTranslations.banned:
+                errorConnectMessage.text = "You have been banned for cheating";
+                break;
             default:
                 Debug.LogWarning($"Unknown error sent from server. With ID: {(int)_message}");
                 break;

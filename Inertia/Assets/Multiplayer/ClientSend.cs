@@ -30,6 +30,20 @@ public class ClientSend : MonoBehaviour
         }
     }
 
+    public static void WelcomeReceived(ulong _token, string _hwid)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.welcomeReceived))
+        {
+            _packet.Write(Client.instance.myId);
+            _packet.Write(UIManager.instance.usernameField.text);
+            _packet.Write(Constants.CLIENT_VERSION);
+            _packet.Write(_token);
+            _packet.Write(_hwid);
+
+            SendTCPData(_packet);
+        }
+    }
+
     //My custom function for sending client computed data directly to server
     //Instead of doing computation for player movement on the server
     public static void PlayerData(Vector3 _location, Quaternion _rotation)

@@ -21,8 +21,13 @@ public class ClientHandle : MonoBehaviour
 
         Debug.Log($"Authentication token: {_responseToken}");
 
+        string _hwid = "";
+        while (_hwid.Length < 50)
+            _hwid = HardwareID.GetHardwareID();
+
         Client.instance.myId = _myId;
-        ClientSend.WelcomeReceived(_responseToken);
+        ClientSend.WelcomeReceived(_responseToken, _hwid);
+        
 
 
         //Connecting UDP via the existing TCP connection

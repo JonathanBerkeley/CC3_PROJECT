@@ -16,7 +16,7 @@ public class Client : MonoBehaviour
     public int myId = 0;
     public TCP tcp;
     public UDP udp;
-
+    
     private bool isConnected = false;
     private delegate void PacketHandler(Packet _packet);
     private static Dictionary<int, PacketHandler> packetHandlers;
@@ -74,6 +74,7 @@ public class Client : MonoBehaviour
             });
         }
     }
+
     /*
     * With thanks to https://stackoverflow.com/questions/11837541/check-if-a-port-is-open
     */

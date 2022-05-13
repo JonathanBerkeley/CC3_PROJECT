@@ -2912,6 +2912,7 @@ MonoBehaviour:
   ip: 
   port: 24745
   myId: 0
+  myHwid: 
 --- !u!4 &669163818
 Transform:
   m_ObjectHideFlags: 0

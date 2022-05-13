@@ -4537,6 +4537,8 @@ GameObject:
   - component: {fileID: 218449775}
   - component: {fileID: 218449773}
   - component: {fileID: 218449774}
+  - component: {fileID: 218449780}
+  - component: {fileID: 218449781}
   m_Layer: 0
   m_Name: SceneScripts
   m_TagString: Untagged
@@ -4668,6 +4670,30 @@ MonoBehaviour:
   maps:
   - {fileID: 1181280658}
   - {fileID: 311238515}
+--- !u!114 &218449780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218449772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b306558b97023c4db3ede3a98f22008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &218449781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218449772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab6f0b540881784a86a5cc7e78ea18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &220161391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
