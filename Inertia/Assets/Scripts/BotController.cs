@@ -61,7 +61,7 @@ public class BotController : MonoBehaviour
             rb.AddForce(0, jumpForce, 0);
         }
 
-        //Randomally decide to shoot
+        //Randomly decide to shoot
         if ((int)Random.Range(1, 4) == 3)
         {
             botLauncher.RequestShoot();
