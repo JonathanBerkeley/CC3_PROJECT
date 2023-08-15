@@ -1,6 +1,6 @@
-[![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/ages-12.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com)
+[![forthebadge](https://github.com/BraveUX/for-the-badge/blob/master/src/images/badges/made-with-c-sharp.svg)](https://mainuser.dev)
+[![forthebadge](https://github.com/BraveUX/for-the-badge/blob/master/src/images/badges/ages-12.svg)](https://mainuser.dev)
+[![forthebadge](https://github.com/BraveUX/for-the-badge/blob/master/src/images/badges/uses-badges.svg)](https://mainuser.dev)
 
 # Inertia
 This game features a character with a rocket launcher or a grapple, they can use these tools to propel themselves through the world.    
